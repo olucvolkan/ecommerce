@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class FavoritesSeeder extends Seeder
+class CategoriesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,9 +14,10 @@ class FavoritesSeeder extends Seeder
     public function run(): void
     {
         for ($i=1; $i <= 30; $i++) {
-            DB::table('favorites')->insert([
-                'user_id' => $i,
-                'product_id' => $i,
+            DB::table('categories')->insert([
+                'parent_id' => $i,
+                'name' => 'Lorem',
+                'slug' => 'category-'.$i,
             ]);
         }
     }
